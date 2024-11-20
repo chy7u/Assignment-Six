@@ -1,0 +1,54 @@
+/* hero section */
+
+.hero-section {
+    display:grid;
+    position:relative;
+    background-image:
+    linear-gradient(to bottom, rgb(0,0,0,0.1), rgba(5,20,49,0.9)),
+    linear-gradient(to left, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
+    linear-gradient(to right, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
+    url(images/moviesbackgroundherosection.jpg);
+    background-size:cover;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    
+}
+
+.hero-text > h1 {
+    font-size:50px;
+    color:#fff;
+}
+
+.hero-text ,
+.column {
+    margin:5%;
+}
+
+.column {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.column > img {
+    padding: 10px 10px;
+}
+
+.column > img {
+    padding: 10px; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.column > img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/*responsive*/
+@media (max-width: 768px) {
+    .column {
+        grid-template-columns: 1fr; 
+    }
+}
