@@ -1,7 +1,7 @@
 import './Header.css';
 
 function Header() {
-
+    
     return (
         <div class="header">
         <div class="title">Notflix</div>
@@ -23,7 +23,6 @@ function Header() {
             </div>
         </div>
     )
-
 }
 
 export default Header;
