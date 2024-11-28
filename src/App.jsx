@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
+import Featured from "./components/Feature";
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div>
       <Header/>
       <Hero/>
+      <Featured/>
       <Footer/>
     </div>
   )

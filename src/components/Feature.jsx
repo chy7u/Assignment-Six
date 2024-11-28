@@ -2,7 +2,7 @@ import './Feature.css';
 
 function Featured() {
     const [movies, setMovies] = useState([]);
-    const navigate = useNavigate();
+    /*const navigate = useNavigate();*/
 
     useEffect(() => {
         (async function getMovies() {
@@ -14,29 +14,25 @@ function Featured() {
     });
 
     function loadMovie(id) {
-        navigate('/movies/${id}');
+        navigate(`/movies/${id}`);
     }
 
     return (
-        <div className="featured-section">
+        <div>
             <h2>Featured Movies</h2>
-            <div class="featured-movie">
-                <img src="images/gundammovieposter.jpg" alt="Featured Movie Poster" />
-                <div class="movie-info">
-                    <h3>Mobile Suit Gundam: Trilogy</h3>
-                    <p>Universal Century 0079. Amuro Ray finds himself caught up in the war between the Earth Federation and the Principality of Zeon. He unwillingly becomes the pilot of a prototype Mobile Suit called the Gundam. Now he and the crew of the White Base will have to fight for their very lives as the enemy attempts to destroy this new weapon at all costs. Combatants will face triumph and turmoil as they battle their way through space to get to their final destination on Earth.</p>
-                    <button class="watch-button">Rent Now</button>
-                </div>
-            </div>
-
-            <div class="featured-movie">
-                <img src="images/evangelionmovieposter.jpg" alt="Featured Movie Poster" />
-                <div class="movie-info">
-                    <h3>Neon Genesis Evangelion</h3>
-                    <p>Experiments in 2000 destroyed humankind in a catastrophe called the Second Impact. Fifteen years later, humanity faces another trial. Giant beings called "Angels" appear, and the Special Agency NERV works covertly to fight them. 14-year-old Shinji Ikari becomes the center of this fight.</p>
-                    <button class="watch-button">Rent Now</button>
-                </div>
+            <div className="movies-container">
+                {movies.map((movie) => (
+                    <div key={movie.id} className="movie-card">
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                            alt={movie.title}
+                            className="movie-poster"
+                        />
+                    </div>
+                ))}
             </div>
         </div>
-    )
+    );
 }
+
+export default Featured;
