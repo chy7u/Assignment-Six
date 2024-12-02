@@ -3,21 +3,21 @@ import './Header.css';
 function Header() {
     
     return (
-        <div class="header">
-        <div class="title">Notflix</div>
-        <div class="navigation">
+        <div className="header">
+        <div className="title">Notflix</div>
+        <div className="navigation">
             <a href="#">Home</a>
             <a href="#">Movies</a>
             <a href="#">TV Shows</a>
             <a href="#">Top Rated</a>
-            <div class="dropdown">
-                <button class="drop-button">Profile</button>
-                <div class="drop-content">
+            <div className="dropdown">
+                <button className="drop-button">Profile</button>
+                <div className="drop-content">
                     <a href="#">Sign In</a>
                     <a href="#">Help</a>
                 </div>
             </div>
-            <button class="LogIn">
+            <button className="LogIn">
                 <a href="#">Join Notflix</a>
             </button>
             </div>

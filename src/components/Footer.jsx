@@ -4,9 +4,9 @@ function Footer() {
 
     return (
         <div>
-            <div class="faqs">
-                <h1 class="footer-head">Frequently Asked Questions</h1>
-                <div class="accordion">
+            <div className="faqs">
+                <h1 className="footer-head">Frequently Asked Questions</h1>
+                <div className="accordion">
                     <details>
                         <summary>What is Notflix?</summary>
                         <p>A free movie streaming website! :3</p>
@@ -27,8 +27,8 @@ function Footer() {
                     </details>
                 </div>
             </div>
-            <div class="misc">
-                <div class="links">
+            <div className="misc">
+                <div className="links">
                     <ul>
                         <li><a href="https://github.com/chy7u/Assignment-Two" target="_blank">Github</a></li>
                         <li><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Email</a></li>
