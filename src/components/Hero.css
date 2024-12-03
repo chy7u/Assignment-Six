@@ -7,7 +7,7 @@
     linear-gradient(to bottom, rgb(0,0,0,0.1), rgba(5,20,49,0.9)),
     linear-gradient(to left, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
     linear-gradient(to right, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
-    url(images/moviesbackgroundherosection.jpg);
+    url('../../src/assets/moviesbackgroundherosection.jpg');
     background-size:cover;
     align-items: center;
     grid-template-columns: repeat(5, 1fr);
