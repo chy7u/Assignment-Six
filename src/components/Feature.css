@@ -25,17 +25,17 @@
     margin-right: 20px; 
 }
 
-.movie-card {
+.movie-info {
     max-width: 500px;
     text-align: left;
 }
 
-.movie-card {
+.movie-info h3 {
     font-size: 1.8em;
     margin-bottom: 10px;
 }
 
-.movie-card {
+.movie-info p {
     font-size: 1em;
     margin-bottom: 15px;
 }

@@ -10,6 +10,7 @@ function Hero() {
             </div>
             <div className="column grid-col-span-2 grid-row-span-2">
             </div>
+            
         </div>
 
     )
