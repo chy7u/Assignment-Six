@@ -1,4 +1,4 @@
-import Genre from "../components/Genres";
+import Genres from "../components/Genres";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom"; 
@@ -21,8 +21,9 @@ function GenreView() {
       10402: "Music",
       53: "Thriller",
   };
-  const genreName = genreNames[id];
-  console.log(id);
+  const x = genreNames[id];
+  console.log(genreNames[14]);
+  console.log(x);
 
   useEffect(() => {
       async function getMovies() {
@@ -35,7 +36,7 @@ function GenreView() {
       }
       getMovies();
 
-  },[id, page]);
+  }, [id, page]);
 
   function nextPage() {
       if (page < totalPages) {
@@ -51,7 +52,7 @@ function GenreView() {
 
     return (
       <div className="genreView-container">
-        <h1>{genreName} Movies</h1>
+        <h1>{x} Movies</h1>
         <div className='movie-list'>
             {movies.map((movie) => (
                 <div key={movie.id} className="movie-card">

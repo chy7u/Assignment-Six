@@ -1,6 +1,10 @@
 import './Header.css';
 
 function Header() {
+
+    function loginPage() {
+        navigate(`/login`);
+    }
     
     return (
         <div className="header">
@@ -17,7 +21,7 @@ function Header() {
                     <a href="#">Help</a>
                 </div>
             </div>
-            <button className="LogIn">
+            <button className="LogIn" onClick={() => {loginPage() }}>
                 <a href="#">Join Notflix</a>
             </button>
             </div>

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 function Genres(props) {
+  const navigate = useNavigate();
     function genrePage(id) {
         navigate(`genre/${id}`);
     }
@@ -12,7 +13,7 @@ function Genres(props) {
         <ul>
           {
             props.genreList.map((item) => {
-                <li key={item.id}>
+                <li key={item.id} onClick={() => click(item)}>
                     {item.genre}
                 </li>
             })
