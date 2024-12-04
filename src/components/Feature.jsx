@@ -5,6 +5,9 @@ import "./Feature.css";
 function Feature() {
     const [featured, setFeatured] = useState ([]);
 
+    const genres = {
+    }
+
     useEffect(() => {
         (async function getFeatured() {
             const response = await axios.get(
@@ -39,6 +42,7 @@ function Feature() {
                     </div>
                 ))}
             </div>
+
         </div>
     )
 
