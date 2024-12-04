@@ -1,19 +1,38 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './LoginView.css';
 
 function LoginView() {
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     function login(event) {
-        navigate("/movies/genre/28");
+        event.preventDefault();
+        if (password === "pee") {
+            navigate('/movies');
+        } else {
+            alert("Wrong password!");
+        }
     }
-    
+
     return (
-        <div>
-            <form onSubmit={(event) => { login(event)}}>
-                <button type="submit">poop</button>
-            </form>
+        <div className="login-container">
+            <div className="form-container">
+                <h2>Login</h2>
+                <form onSubmit={(event) => {login(event)}}>
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" id="email" name="email" required/>
+
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" id="password" name="password" value={password} onChange={(event) => { setPassword(event.target.value) }} required/>
+
+                    <button type="submit" className="login-button">Login</button>
+                </form>
+                <p className="register-link">New to Notflix? <a href="#">Register Now</a></p>
+            </div>
         </div>
-    )
+    );
 }
 
-export default LoginView();
+export default LoginView;

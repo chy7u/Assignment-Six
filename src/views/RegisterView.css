@@ -1,0 +1,112 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff; /* Light text for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    height: 100vh; /* Full screen height */
+}
+
+/* Register Container */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    height: 100%; /* Full viewport height */
+    margin-top: 60px; /* Move the form box down */
+}
+
+/* Form Container */
+.form-container {
+    background-color: #1e1e1e; /* Darker background for form */
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px; /* Max width of the form */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); /* Shadow effect */
+    text-align: center;
+}
+
+/* Heading */
+.form-container h2 {
+    font-size: 2.4em;
+    margin-bottom: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between inputs */
+}
+
+/* Label Styling */
+label {
+    text-align: left;
+    font-size: 1em;
+    color: #bbb;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="firstName"],
+input[type="lastName"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    border: 2px solid #333; /* Border color */
+    background-color: #333; /* Dark background for inputs */
+    color: #fff; /* Light text inside input */
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="firstName"]:focus,
+input[type="lastName"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #cc3333; /* Red border on focus */
+    outline: none;
+}
+
+/* Submit Button */
+.register-button {
+    padding: 15px;
+    background-color: #cc3333; /* Red background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #e54b4b; /* Lighter red on hover */
+}
+
+/* Login Link */
+.login-link {
+    font-size: 1em;
+    margin-top: 20px;
+    color: #bbb;
+}
+
+.login-link a {
+    color: #cc3333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

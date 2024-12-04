@@ -1,26 +1,27 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./Genres.css";
 
 function Genres(props) {
-  const navigate = useNavigate();
-    function genrePage(id) {
-        navigate(`genre/${id}`);
-    }
-    const click = (item) => {
-        genrePage(item.id);
-    }
-    return (
-      <div>
-        <ul>
-          {
-            props.genreList.map((item) => {
-                <li key={item.id} onClick={() => click(item)}>
-                    {item.genre}
-                </li>
-            })
-          }
-        </ul>
-      </div>
-    )
-  }
   
-  export default Genres;
+  console.log(props.genresList);
+
+    return (
+        <div>
+            <ul>
+                {
+                    props.genresList.map((item) => {
+                        return (
+                            <li key={item.id}>
+                                <Link to={`/movies/genre/${item.id}`}>
+                                    <button>{item.genre}</button>
+                                </Link>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+        </div>
+    )
+}
+  
+export default Genres;

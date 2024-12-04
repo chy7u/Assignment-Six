@@ -1,54 +1,47 @@
 /* hero section */
-
 .hero-section {
-    display:grid;
-    position:relative;
-    background-image:
-    linear-gradient(to bottom, rgb(0,0,0,0.1), rgba(5,20,49,0.9)),
-    linear-gradient(to left, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
-    linear-gradient(to right, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
-    url('../../src/assets/moviesbackgroundherosection.jpg');
-    background-size:cover;
+    display: grid;
+    position: relative;
+    background-image: 
+        linear-gradient(to bottom, rgb(0,0,0,0.1), rgba(5,20,49,0.9)),
+        linear-gradient(to left, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
+        linear-gradient(to right, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
+        url('../../src/assets/moviesbackgroundherosection.jpg');  /* Keep the background image */
+    background-size: cover;   /* This ensures the image covers the whole section */
+    background-position: center; /* Ensure the background image is centered */
     align-items: center;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    
+    grid-template-columns: repeat(5, 1fr); /* Keep the grid structure */
+    grid-template-rows: 1fr; /* Change rows to only 1 row for better space usage */
+    height: 100vh; /* Make sure the hero section takes the full height of the viewport */
+    padding: 0 5%; /* Add padding to the sides for some spacing */
 }
 
 .hero-text > h1 {
-    font-size:50px;
-    color:#fff;
+    font-size: 50px;
+    color: #fff;
+    margin: 0; /* Remove margin to avoid unnecessary space */
+    text-align: center; /* Center text for better layout */
+    line-height: 1.2;
 }
 
-.hero-text ,
+.hero-text {
+    grid-column: span 5; /* Make hero text span the entire width */
+    text-align: center; /* Center align the text */
+}
+
 .column {
-    margin:5%;
+    display: none; /* Remove the column section since it's no longer used */
 }
 
-.column {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.column > img {
-    padding: 10px 10px;
-}
-
-.column > img {
-    padding: 10px; 
-    border-radius: 10px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.column > img:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-/*responsive*/
+/* responsive */
 @media (max-width: 768px) {
-    .column {
-        grid-template-columns: 1fr; 
+    .hero-section {
+        grid-template-columns: 1fr; /* Adjust the grid for smaller screens */
+        grid-template-rows: 1fr; 
+        height: 100vh; /* Keep full screen height */
+    }
+
+    .hero-text > h1 {
+        font-size: 30px; /* Make font smaller on smaller screens */
     }
 }

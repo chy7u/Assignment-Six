@@ -1,10 +1,7 @@
+import { Link } from "react-router-dom";
 import './Header.css';
 
 function Header() {
-
-    function loginPage() {
-        navigate(`/login`);
-    }
     
     return (
         <div className="header">
@@ -17,13 +14,13 @@ function Header() {
             <div className="dropdown">
                 <button className="drop-button">Profile</button>
                 <div className="drop-content">
-                    <a href="#">Sign In</a>
+                    <Link to={`/login`} className="button">Sign In</Link>
                     <a href="#">Help</a>
                 </div>
             </div>
-            <button className="LogIn" onClick={() => {loginPage() }}>
-                <a href="#">Join Notflix</a>
-            </button>
+                <button className="Register">
+                    <Link to={`/register`} className="button">Join Notflix</Link>
+                </button>
             </div>
         </div>
     )
