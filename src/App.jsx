@@ -13,7 +13,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="" element={<HomeView/>}/>
         <Route path="/login" element={<LoginView/>}/>
         <Route path="genre/:id" element={<GenreView/>}/>
       </Routes>
