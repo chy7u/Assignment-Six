@@ -1,10 +1,10 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Genres from "../components/Genres";
 import "./MoviesView.css";
 
 function MoviesView() {
-    const navigate = useNavigate();
     const genres = [
         {
             genre: "Action",
@@ -49,7 +49,7 @@ function MoviesView() {
     ]
 
     return (
-        <div className="movies-container">
+        <div className="app-container">
             <Header/>
             <div className="genre-container">
                 <div className="genre-list">
@@ -59,6 +59,7 @@ function MoviesView() {
                     <Outlet/>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }

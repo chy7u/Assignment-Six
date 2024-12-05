@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import "./Genres.css";
 
 function Genres(props) {
-  
-  console.log(props.genresList);
+    console.log(props.genresList);
 
     return (
         <div>
@@ -23,5 +22,5 @@ function Genres(props) {
         </div>
     )
 }
-  
+
 export default Genres;
