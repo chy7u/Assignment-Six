@@ -6,7 +6,7 @@ function Genres(props) {
 
     return (
         <div>
-            <ul>
+            <ul className="genres">
                 {
                     props.genresList.map((item) => {
                         return (

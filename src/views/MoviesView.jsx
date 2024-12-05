@@ -49,17 +49,21 @@ function MoviesView() {
     ]
 
     return (
-        <div className="app-container">
-            <Header/>
-            <div className="genre-container">
-                <div className="genre-list">
-                    <Genres genresList={genres}/>
-                </div>
-                <div className="genre-movies">
-                    <Outlet/>
-                </div>
+        <div>
+            <div className="header">
+                <Header/>
             </div>
-            <Footer/>
+            <div className="movies-view-container">
+                <div className="main-container">
+                    <aside className="genre-list">
+                        <Genres genresList={genres}/>
+                    </aside>
+                    <main className="genre-movies">
+                        <Outlet/>
+                    </main>
+                </div>
+                <Footer/>
+            </div>
         </div>
     );
 }
