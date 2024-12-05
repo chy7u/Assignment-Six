@@ -31,8 +31,8 @@ function MoviesView() {
             id: 9648
         },
         {
-            genre: "TV",
-            id: 10770
+            genre: "Music",
+            id: 10402
         },
         {
             genre: "War",
