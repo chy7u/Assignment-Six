@@ -15,8 +15,6 @@ function GenreView() {
           const response = await axios.get(
             `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=${genre_id}&page=${page}`
           );
-          console.log(response.data); // Log the response data
-          console.log(genre_id);
           setMovies(response.data.results);
           setTotalPages(response.data.total_pages);
         } catch (error) {

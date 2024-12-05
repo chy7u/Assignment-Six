@@ -7,7 +7,7 @@ function Header() {
         <div className="header">
         <div className="title">Notflix</div>
         <div className="navigation">
-            <a href="#">Home</a>
+            <Link to={`/`} className="button">Home</Link>
             <a href="#">Movies</a>
             <a href="#">TV Shows</a>
             <a href="#">Top Rated</a>

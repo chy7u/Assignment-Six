@@ -6,42 +6,42 @@
         linear-gradient(to bottom, rgb(0,0,0,0.1), rgba(5,20,49,0.9)),
         linear-gradient(to left, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
         linear-gradient(to right, rgb(0,0,0,0.1), rgba(0,0,0,0.9)),
-        url('../../src/assets/moviesbackgroundherosection.jpg');  /* Keep the background image */
-    background-size: cover;   /* This ensures the image covers the whole section */
-    background-position: center; /* Ensure the background image is centered */
+        url('../../src/assets/moviesbackgroundherosection.jpg');  
+    background-size: cover;  
+    background-position: center; 
     align-items: center;
-    grid-template-columns: repeat(5, 1fr); /* Keep the grid structure */
-    grid-template-rows: 1fr; /* Change rows to only 1 row for better space usage */
-    height: 100vh; /* Make sure the hero section takes the full height of the viewport */
-    padding: 0 5%; /* Add padding to the sides for some spacing */
+    grid-template-columns: repeat(5, 1fr); 
+    grid-template-rows: 1fr;
+    height: 100vh; 
+    padding: 0 5%; 
 }
 
 .hero-text > h1 {
     font-size: 50px;
     color: #fff;
-    margin: 0; /* Remove margin to avoid unnecessary space */
-    text-align: center; /* Center text for better layout */
+    margin: 0;
+    text-align: center; 
     line-height: 1.2;
 }
 
 .hero-text {
-    grid-column: span 5; /* Make hero text span the entire width */
-    text-align: center; /* Center align the text */
+    grid-column: span 5; 
+    text-align: center; 
 }
 
 .column {
-    display: none; /* Remove the column section since it's no longer used */
+    display: none;
 }
 
 /* responsive */
 @media (max-width: 768px) {
     .hero-section {
-        grid-template-columns: 1fr; /* Adjust the grid for smaller screens */
+        grid-template-columns: 1fr; 
         grid-template-rows: 1fr; 
-        height: 100vh; /* Keep full screen height */
+        height: 100vh; 
     }
 
     .hero-text > h1 {
-        font-size: 30px; /* Make font smaller on smaller screens */
+        font-size: 30px; 
     }
 }

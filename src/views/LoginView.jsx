@@ -9,7 +9,7 @@ function LoginView() {
 
     function login(event) {
         event.preventDefault();
-        if (password === "pee") {
+        if (password === "ok") {
             navigate('/movies');
         } else {
             alert("Wrong password!");

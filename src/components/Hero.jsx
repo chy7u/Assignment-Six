@@ -17,10 +17,3 @@ function Hero() {
 }
 
 export default Hero;
-
-/*
-<img src="images/homealonemovieposter.jpg" style="width:95%">
-                <img src="images/jamesbondmovieposter.jpg" style="width:95%">
-                <img src="images/etmovieposter.jpg" style="width:95%">
-                <img src="images/backtothefuturemovieposter.jpg" style="width:95%">
-                */
