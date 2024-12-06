@@ -11,8 +11,9 @@ import './App.css';
 function App() {
 
   return (
-    <BrowserRouter>
-      <Routes>
+    <StoreProvider>
+      <BrowserRouter>
+        <Routes>
           <Route path="/" element={<HomeView/>}/>
           <Route path="/login" element={<LoginView/>}/>
           <Route path="/register" element={<RegisterView/>}/>
@@ -20,8 +21,9 @@ function App() {
             <Route path="genre/:genre_id" element={<GenreView/>}/>
             <Route path="details/:id" element={<DetailView/>}/>
           </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </StoreProvider>
   )
 }
 
