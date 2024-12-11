@@ -2,6 +2,8 @@ import { Outlet, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Genres from "../components/Genres";
+import { useContext } from 'react';
+import { StoreProvider } from "../context/GlobalState";
 import "./MoviesView.css";
 
 function MoviesView() {

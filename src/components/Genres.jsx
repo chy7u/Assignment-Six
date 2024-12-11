@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { StoreProvider } from "../context/GlobalState";
 import "./Genres.css";
 
 function Genres(props) {
+  
   return (
     <div>
       <ul className="genres">

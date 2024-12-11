@@ -1,21 +1,26 @@
 import React from 'react';
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useStoreContext } from '../context';
+import { useStoreContext } from '../context/GlobalState';
 
 import "./RegisterView.css";
 
 function RegisterView() {
-    const password = useRef('');
-    const email = useRef('');
-    const confirmedPass = useRef('');
     const navigate = useNavigate();
-    const { setEmail } = useStoreContext();
+
+    const password = useRef('');
     const { setPass } = useStoreContext();
+    const email = useRef('');
+    const { setEmail } = useStoreContext();
+
+    const confirmedPass = useRef('');
+
+    const genres = useRef('');
+    const { setGenres } = useStoreContext();
 
     function register(event) {
         event.preventDefault();
-        navigate('/');
+        navigate('/login');
 
         setEmail(email.current.value);
         setPass(password.current.value);
@@ -44,10 +49,13 @@ function RegisterView() {
                     
                     <label htmlFor="confirm-password">Confirm Password</label>
                     <input type="password" id="confirm-password" name="confirm-password" ref={confirmedPass} required />
+
+                    <label htmlFor="check-genres">Genre Options</label>
+
                     
                     <button type="submit" className="register-button">Register</button>
                 </form>
-                <p className="login-link">Already have an account? <a href="#">Login</a></p>
+                <p className="login-link">Already have an account? <a href="/login">Login</a></p>
             </div>
         </div>
     );

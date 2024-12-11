@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { StoreProvider } from "./context/GlobalState";
 
 import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
@@ -11,6 +12,9 @@ import './App.css';
 function App() {
 
   return (
+    /* by wrapping everything in StoreProvider (useContext),*/
+    /* every child component in the Context Provider have access*/ 
+    /* to the StoreProvider Context*/ 
     <StoreProvider>
       <BrowserRouter>
         <Routes>

@@ -29,7 +29,7 @@ function LoginView() {
 
                     <button type="submit" className="login-button">Login</button>
                 </form>
-                <p className="register-link">New to Notflix? <a href="#">Register Now</a></p>
+                <p className="register-link">New to Notflix? <a href="/register">Register Now</a></p>
             </div>
         </div>
     );
