@@ -15,8 +15,50 @@ function RegisterView() {
 
     const confirmedPass = useRef('');
 
-    const genres = useRef('');
-    const { setGenres } = useStoreContext();
+    const genres = [
+        {
+            genre: "Action",
+            id: 28
+        },
+        {
+            genre: "Animation",
+            id: 16
+        },
+        {
+            genre: "Crime",
+            id: 80
+        },
+        {
+            genre: "Fantasy",
+            id: 14
+        },
+        {
+            genre: "Horror",
+            id: 27
+        },
+        {
+            genre: "Mystery",
+            id: 9648
+        },
+        {
+            genre: "Music",
+            id: 10402
+        },
+        {
+            genre: "War",
+            id: 10752
+        },
+        {
+            genre: "Family",
+            id: 10751
+        },
+        {
+            genre: "Sci-Fi",
+            id: 878
+        },
+    ]
+
+    
 
     function register(event) {
         event.preventDefault();
@@ -51,7 +93,7 @@ function RegisterView() {
                     <input type="password" id="confirm-password" name="confirm-password" ref={confirmedPass} required />
 
                     <label htmlFor="check-genres">Genre Options</label>
-
+                    <input type="checkbox" id="genres" name="genres"></input>
                     
                     <button type="submit" className="register-button">Register</button>
                 </form>
