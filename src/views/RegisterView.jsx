@@ -1,18 +1,26 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStoreContext } from '../context/GlobalState';
 
 import "./RegisterView.css";
 
 function RegisterView() {
+    const { 
+        setFirst, 
+        setLast, 
+        setEmail, 
+        setPass, 
+        setGenres,
+        setList
+    } = useStoreContext();
+
     const navigate = useNavigate();
 
-    const password = useRef('');
-    const { setPass } = useStoreContext();
+    const firstName = useRef('');
+    const lastName = useRef('');
     const email = useRef('');
-    const { setEmail } = useStoreContext();
-
+    const password = useRef('');
     const confirmedPass = useRef('');
 
     const genres = [
@@ -58,14 +66,27 @@ function RegisterView() {
         },
     ]
 
-    
+    const checkBoxesRef = useRef({});
 
     function register(event) {
         event.preventDefault();
-        navigate('/login');
 
+        const selectedGenres = Object.keys(checkBoxesRef.current)
+        .filter((genreId) => checkBoxesRef.current[genreId].checked)
+        .map(Number); // convert string ids to number
+
+        if (selectedGenres.length < 10) {
+            alert("You need at least 10 genres!");
+            return;
+        }
+
+        setFirst(firstName.current.value);
+        setLast(lastName.current.value);
         setEmail(email.current.value);
         setPass(password.current.value);
+        setGenres(selectedGenres);
+
+        navigate('/login');
     }
 
     function confirmPass(event) {
@@ -77,23 +98,56 @@ function RegisterView() {
             <div className="form-container">
                 <h2>Create an Account</h2>
                 <form action="#" method="POST" onSubmit={(event) => {register(event) }}>
-                    <label htmlFor="firstName">First Name</label>
-                    <input type="firstName" id="firstName" name="firstName" required />
+                    <input 
+                        type="text" 
+                        id="firstName" 
+                        name="firstName"
+                        placeholder="First Name"
+                        ref={firstName} 
+                        required />
+                    <input 
+                        type="text" 
+                        id="lastName" 
+                        name="lastName"
+                        placeholder="Last Name"
+                        ref={lastName} 
+                        required />
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="Email" 
+                        ref={email} 
+                        required />
+                    <input 
+                        type="text" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Password" 
+                        ref={password} 
+                        required />
+                    <input 
+                        type="text" 
+                        id="confirm-password" 
+                        name="confirm-password" 
+                        placeholder="Confirm Password" 
+                        ref={confirmedPass} 
+                        required />
 
-                    <label htmlFor="lastName">Last Name</label>
-                    <input type="lastName" id="lastName" name="lastName" required />
-
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" ref={email} required />
-                    
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password" ref={password} required />
-                    
-                    <label htmlFor="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" ref={confirmedPass} required />
-
-                    <label htmlFor="check-genres">Genre Options</label>
-                    <input type="checkbox" id="genres" name="genres"></input>
+                    <label htmlFor="check-genres">Genre Options:</label>
+                    <div className="genresList">
+					    {genres.map((item) => {
+					    	return (
+					    		<label key={item.id}>
+					    			<input 
+					    			type='checkbox' 
+					    			id="check"
+					    			ref={(el) => (checkBoxesRef.current[item.id] = el)}
+					    			/> {item.genre}
+					    		</label>
+					    	);
+					    })}
+				    </div>
                     
                     <button type="submit" className="register-button">Register</button>
                 </form>

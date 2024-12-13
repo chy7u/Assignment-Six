@@ -6,10 +6,14 @@ export const StoreContext = createContext();
 
 //provider components.. children is the props
 export const StoreProvider = ({ children }) => {
+    const [firstName, setFirst] = useState("");
+    const [lastName, setLast] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPass] = useState("");
     const [cart, setCart] = useState(Map());
+    
     const [genres, setGenres] = useState(Map());
+    const [genrelist, setList] = useState(Map());
 
     return (
         //value is initial values

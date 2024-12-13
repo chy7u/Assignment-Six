@@ -1,110 +1,116 @@
-/* General Body Styling */
+/* General body and layout */
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Dark background */
-    color: #fff; /* Light text for contrast */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align items at the top */
-    height: 100vh; /* Full screen height */
 }
 
-/* Register Container */
+/* Container for the whole register view */
 .register-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align content to the top */
-    height: 100%; /* Full viewport height */
-    margin-top: 60px; /* Move the form box down */
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
-/* Form Container */
+/* Form container with flexbox layout */
 .form-container {
-    background-color: #1e1e1e; /* Darker background for form */
-    padding: 40px;
+    background-color: white;
+    padding: 30px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 450px; /* Max width of the form */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); /* Shadow effect */
-    text-align: center;
-}
-
-/* Heading */
-.form-container h2 {
-    font-size: 2.4em;
-    margin-bottom: 30px;
-    color: #fff;
-    font-weight: 600;
-}
-
-/* Form Elements */
-form {
+    max-width: 450px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between inputs */
+    justify-content: space-between;  /* Space between form elements and the login link */
+    height: 100%;  /* Ensures it stretches to full height */
 }
 
-/* Label Styling */
-label {
-    text-align: left;
-    font-size: 1em;
-    color: #bbb;
-    margin-bottom: 5px;
+/* Headings and Form */
+h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-/* Input Fields */
-input[type="text"],
-input[type="firstName"],
-input[type="lastName"],
-input[type="email"],
-input[type="password"] {
+/* Form Inputs */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
     padding: 12px;
-    border: 2px solid #333; /* Border color */
-    background-color: #333; /* Dark background for inputs */
-    color: #fff; /* Light text inside input */
+    margin: 10px 0;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
-input[type="text"]:focus,
-input[type="firstName"]:focus,
-input[type="lastName"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-    border-color: #cc3333; /* Red border on focus */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
     outline: none;
+    border-color: #007bff;
 }
 
-/* Submit Button */
+/* Genre Preferences Section */
+.genres-label {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 10px 0;
+    display: block;
+}
+
+.genresList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.genre-option {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Register Button */
 .register-button {
-    padding: 15px;
-    background-color: #cc3333; /* Red background */
-    color: #fff; /* White text */
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
     border: none;
     border-radius: 8px;
-    font-size: 1.2em;
+    color: white;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
 .register-button:hover {
-    background-color: #e54b4b; /* Lighter red on hover */
+    background-color: #0056b3;
 }
 
-/* Login Link */
+/* Login link container */
+.login-link-container {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    margin-top: 20px;             /* Allow this container to take up remaining space */
+}
+
 .login-link {
-    font-size: 1em;
-    margin-top: 20px;
-    color: #bbb;
+    font-size: 1rem;
+    text-align: center;
 }
 
 .login-link a {
-    color: #cc3333;
+    color: #007bff;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .login-link a:hover {
