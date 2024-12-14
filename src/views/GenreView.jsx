@@ -1,28 +1,43 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useStoreContext } from "../context/GlobalState";
 import "./GenreView.css";
 
 function GenreView() {
-    const { genre_id } = useParams();
+  const { 
+    selectedGenres, currentGenre
+  } = useStoreContext();
+
+    const { id } = useParams();
+    console.log("Genre ID:", id); //returning undefined??
     const [movies, setMovies] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+
+    const [previousId, setPreviousId] = useState(selectedGenres[0].id);
   
     useEffect(() => {
+      window.scrollTo(0, 0);
+      if (id !== previousId) {
+        setPage(1);
+        setPreviousId(id);
+      }
+
       async function fetchMovies() {
         try {
           const response = await axios.get(
-            `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=${genre_id}&page=${page}`
+            `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=${id}&page=${page}`
           );
           setMovies(response.data.results);
           setTotalPages(response.data.total_pages);
+          console.log("Genre ID:", id);
         } catch (error) {
           console.error("Error fetching movies:", error);
         }
       }
       fetchMovies();
-    }, [genre_id, page]);
+    }, [id, page]);
 
     function nextPage() {
         if (page < totalPages) {

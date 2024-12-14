@@ -10,10 +10,12 @@ export const StoreProvider = ({ children }) => {
     const [lastName, setLast] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPass] = useState("");
-    const [cart, setCart] = useState(Map());
+    const [cart, setCart] = useState([]);
     
-    const [genres, setGenres] = useState(Map());
-    const [genrelist, setList] = useState(Map());
+    const [genres, setGenres] = useState([]);
+    const [selectedGenres, setSelected] = useState([]);
+    const [selectedGenreNames, setSelectedNames] = useState([]);
+    const [currentGenre, setCurrentGenre] = useState([]);
 
     return (
         //value is initial values
@@ -24,7 +26,9 @@ export const StoreProvider = ({ children }) => {
             email, setEmail, 
             firstName, setFirst,
             lastName, setLast,
-            genrelist, setList
+            selectedGenres, setSelected,
+            selectedGenreNames, setSelectedNames,
+            currentGenre, setCurrentGenre
             //sets these states as values inside the context
         }}>
             {children}

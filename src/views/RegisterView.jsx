@@ -11,7 +11,9 @@ function RegisterView() {
         setEmail, 
         setPass, 
         setGenres,
-        setList
+        setSelected, 
+        setSelectedNames,
+        setCurrentGenre
     } = useStoreContext();
 
     const navigate = useNavigate();
@@ -71,14 +73,16 @@ function RegisterView() {
     function register(event) {
         event.preventDefault();
 
-        const selectedGenres = Object.keys(checkBoxesRef.current)
+        const selectedGenresIds = Object.keys(checkBoxesRef.current)
         .filter((genreId) => checkBoxesRef.current[genreId].checked)
         .map(Number); // convert string ids to number
 
-        if (selectedGenres.length < 10) {
+        if (selectedGenresIds.length < 2) {
             alert("You need at least 10 genres!");
             return;
         }
+
+        const selectedGenres = genres.filter((genre) => selectedGenresIds.includes(genre.id));
 
         if (confirmedPass.current.value != password.current.value) {
             alert("Your passwords don't match!");
@@ -89,11 +93,14 @@ function RegisterView() {
         setLast(lastName.current.value);
         setEmail(email.current.value);
         setPass(password.current.value);
-        setGenres(selectedGenres);
+
+        setSelected(selectedGenres);
+        setCurrentGenre(selectedGenresIds[0].genre);
 
         navigate('/login');
     }
 
+    console.log(genres);
     return(
         <div className="register-container">
             <div className="form-container">
