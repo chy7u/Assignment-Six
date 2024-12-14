@@ -7,6 +7,7 @@ import RegisterView from "./views/RegisterView";
 import MoviesView from "./views/MoviesView";
 import GenreView from "./views/GenreView";
 import DetailView from "./views/DetailView";
+import CartView from "./views/CartView";
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/movies" element={<MoviesView/>}>
             <Route path="genre/:id" element={<GenreView/>}/>
             <Route path="details/:id" element={<DetailView/>}/>
+            <Route path="cart" element={<CartView/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

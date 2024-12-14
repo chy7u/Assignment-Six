@@ -10,8 +10,9 @@ export const StoreProvider = ({ children }) => {
     const [lastName, setLast] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPass] = useState("");
-    const [cart, setCart] = useState([]);
-    
+    //cart
+    const [cartItems, setCartItems] = useState([]);
+    //genres
     const [genres, setGenres] = useState([]);
     const [selectedGenres, setSelected] = useState([]);
     const [selectedGenreNames, setSelectedNames] = useState([]);
@@ -20,7 +21,7 @@ export const StoreProvider = ({ children }) => {
     return (
         //value is initial values
         <StoreContext.Provider value={{
-            cart, setCart, 
+            cartItems, setCartItems, 
             password, setPass, 
             genres, setGenres,
             email, setEmail, 

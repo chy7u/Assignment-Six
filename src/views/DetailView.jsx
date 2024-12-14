@@ -1,9 +1,12 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import { useStoreContext } from "../context/GlobalState";
 import "./DetailView.css";
 
 function DetailView() {
+  const { cartItems, setCartItems } = useStoreContext();
+  const [ added, setAdded ] = useState(false);
   const { id } = useParams();
   const [movie, setMovie] = useState();
   const [trailers, setTrailers] = useState([]);
@@ -24,6 +27,24 @@ function DetailView() {
     fetchMovieDetails();
   }, [id]);
 
+  useEffect(() => {
+    if (movie) {
+      setAdded(cartItems.some(item => item.title == movie.title));
+    }
+  }, [cartItems, movie, id]);
+
+  function addToCart() {
+    if (!added) {
+      const updatedCart = [...cartItems, { 
+        title: movie.title, poster: movie.poster_path
+      }];
+      setCartItems(updatedCart);
+      setAdded(true);
+    }
+  }
+
+  console.log(cartItems);
+
   return (
     <div className="detail-view-container">
       {movie ? (
@@ -41,6 +62,16 @@ function DetailView() {
           <p className="detail-info"><span>Rating:</span> {movie.vote_average}</p>
           <p className="detail-info"><span>Genres:</span> {movie.genres.map((g) => g.name).join(", ")}</p>
           <p className="detail-info"><span>Budget:</span> ${movie.budget}</p>
+
+          <button 
+            className="addButton"
+            onClick={addToCart}
+            disabled={added}
+          >
+
+            {added ? "Added" : "Add to Cart"}
+            
+          </button>
 
           {trailers.length > 0 && (
             <div className="trailer-section">

@@ -61,4 +61,9 @@
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(240, 229, 229, 0.4);
   }
+
+  .addButton {
+    background-color:red;
+    color:white;
+  }
   
