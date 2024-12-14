@@ -2,7 +2,6 @@ import React from 'react';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStoreContext } from '../context/GlobalState';
-
 import "./RegisterView.css";
 
 function RegisterView() {
@@ -68,6 +67,7 @@ function RegisterView() {
 
     const checkBoxesRef = useRef({});
 
+    //on submit
     function register(event) {
         event.preventDefault();
 
@@ -80,6 +80,11 @@ function RegisterView() {
             return;
         }
 
+        if (confirmedPass.current.value != password.current.value) {
+            alert("Your passwords don't match!");
+            return;
+        }
+
         setFirst(firstName.current.value);
         setLast(lastName.current.value);
         setEmail(email.current.value);
@@ -87,10 +92,6 @@ function RegisterView() {
         setGenres(selectedGenres);
 
         navigate('/login');
-    }
-
-    function confirmPass(event) {
-        event.preventDefault();
     }
 
     return(
@@ -120,14 +121,14 @@ function RegisterView() {
                         ref={email} 
                         required />
                     <input 
-                        type="text" 
+                        type="password" 
                         id="password" 
                         name="password" 
                         placeholder="Password" 
                         ref={password} 
                         required />
                     <input 
-                        type="text" 
+                        type="password" 
                         id="confirm-password" 
                         name="confirm-password" 
                         placeholder="Confirm Password" 
@@ -137,6 +138,7 @@ function RegisterView() {
                     <label htmlFor="check-genres">Genre Options:</label>
                     <div className="genresList">
 					    {genres.map((item) => {
+                            //maps through each genre item and creates checkbox
 					    	return (
 					    		<label key={item.id}>
 					    			<input 

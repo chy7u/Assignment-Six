@@ -1,7 +1,6 @@
 /* General body and layout */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f9fc;
+    background-color: rgb(5,20,49);
     margin: 0;
     padding: 0;
 }
@@ -11,37 +10,38 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 20px;
+    height: 95vh;
+    padding: 50px;
 }
 
-/* Form container with flexbox layout */
+.form-container > h2 {
+    font-size:30px;
+    color:#cc3333;
+}
+
+.form-container > p {
+    color:rgb(5,20,49);
+}
+
 .form-container {
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;  /* Space between form elements and the login link */
-    height: 100%;  /* Ensures it stretches to full height */
-}
-
-/* Headings and Form */
-h2 {
-    font-size: 1.8rem;
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    justify-content: space-between;  
+    height: 100%; 
 }
 
 /* Form Inputs */
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"], 
+input[type="email"], 
+input[type="password"] {
+    color:#333;
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -57,7 +57,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 /* Genre Preferences Section */
 .genres-label {
     font-size: 1.1rem;
-    color: #333;
     margin: 10px 0;
     display: block;
 }
@@ -105,7 +104,6 @@ input[type="checkbox"] {
 
 .login-link {
     font-size: 1rem;
-    text-align: center;
 }
 
 .login-link a {

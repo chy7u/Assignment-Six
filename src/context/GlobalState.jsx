@@ -18,10 +18,13 @@ export const StoreProvider = ({ children }) => {
     return (
         //value is initial values
         <StoreContext.Provider value={{
-            email, setEmail, 
             cart, setCart, 
             password, setPass, 
-            genres, setGenres
+            genres, setGenres,
+            email, setEmail, 
+            firstName, setFirst,
+            lastName, setLast,
+            genrelist, setList
             //sets these states as values inside the context
         }}>
             {children}
