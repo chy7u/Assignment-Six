@@ -6,6 +6,9 @@ export const StoreContext = createContext();
 
 //provider components.. children is the props
 export const StoreProvider = ({ children }) => {
+    //states to keep track of where user is
+    const [loggedIn, setLoggedIn] = useState(false);
+    //user info
     const [firstName, setFirst] = useState("");
     const [lastName, setLast] = useState("");
     const [email, setEmail] = useState("");
@@ -29,7 +32,8 @@ export const StoreProvider = ({ children }) => {
             lastName, setLast,
             selectedGenres, setSelected,
             selectedGenreNames, setSelectedNames,
-            currentGenre, setCurrentGenre
+            currentGenre, setCurrentGenre,
+            loggedIn, setLoggedIn
             //sets these states as values inside the context
         }}>
             {children}

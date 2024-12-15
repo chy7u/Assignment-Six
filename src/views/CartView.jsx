@@ -15,9 +15,24 @@ function CartView() {
     }
 
     return (
-        <>
-            {}
-        </>
+        <div className="cart-view">
+            <h2>{firstName}'s Cart</h2>
+            <div className="cart-item-container">
+                {cartItems.map((movie) => (
+                    <div key={movie.id} className="cart-view-item">
+                        <p>{movie.title}</p>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                            alt={movie.title}
+                            className="cart-view-image"
+                        />
+                        <button className="trash" onClick={() => { remove(movie)}}>
+                            Delete item
+                        </button>
+                    </div>
+                ))}
+            </div>
+        </div>
     )
 }
 

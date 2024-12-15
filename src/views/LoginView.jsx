@@ -1,20 +1,27 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useStoreContext } from "../context/GlobalState";
 import './LoginView.css';
 
 function LoginView() {
+    const { loggedIn, setLoggedIn } = useStoreContext();
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     function login(event) {
         event.preventDefault();
         if (password === "ok") {
-            navigate('/movies');
+            setLoggedIn(true);
+            setTimeout(() => {
+                navigate('/movies');
+            }, 0);
         } else {
             alert("Wrong password!");
         }
     }
+
+    console.log(loggedIn);
 
     return (
         <div className="login-container">

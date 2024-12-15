@@ -25,8 +25,8 @@ function App() {
           <Route path="/movies" element={<MoviesView/>}>
             <Route path="genre/:id" element={<GenreView/>}/>
             <Route path="details/:id" element={<DetailView/>}/>
-            <Route path="cart" element={<CartView/>}/>
           </Route>
+          <Route path="cart" element={<CartView/>}/>
         </Routes>
       </BrowserRouter>
     </StoreProvider>

@@ -1,4 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Genres from "../components/Genres";
@@ -7,8 +8,12 @@ import "./MoviesView.css";
 
 function MoviesView() {
     const { 
-        genreList
+        genreList, loggedIn
     } = useStoreContext();
+
+    useEffect(() => {
+        console.log("Logged In changed to:", loggedIn);
+    }, [loggedIn]);
     
     return (
         <div>
