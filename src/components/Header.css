@@ -55,6 +55,54 @@
     color:#cc6633;
 }
 
+/* navigation logged in*/
+
+.navigation-logged-in > a {
+    color:#fff;
+    background:#cc6633;
+    font-size:20px;
+    text-decoration: none;
+    margin-right:50px;
+    padding:0.5rem;
+    outline:2px outset black;
+}
+
+.navigation-logged-in button {
+    color:#fff;
+    background-color:#cc3333;
+    margin-inline:5px;
+    margin-right:40px;
+    margin-top:auto;
+    padding:0.5rem;
+    width:auto;
+}
+
+.navigation-logged-in .Cart > a {
+    color:#fff;
+    background-color:none;
+    font-size:20px;
+    text-decoration:none;
+}
+
+.navigation-logged-in .Log-Out {
+    color:#fff;
+    background-color:none;
+    font-size:20px;
+    text-decoration:none;
+}
+
+.navigation-logged-in button:hover, 
+.navigation-logged-in button:hover > a {
+    background-color:#fff;
+    color:#cc3333;
+    cursor: pointer;
+}
+
+.navigation a:hover {
+    background-color:#fff;
+    color:#cc6633;
+}
+
 /* drop down and its related styling */
 
 .dropdown {

@@ -8,6 +8,7 @@ import MoviesView from "./views/MoviesView";
 import GenreView from "./views/GenreView";
 import DetailView from "./views/DetailView";
 import CartView from "./views/CartView";
+import SettingsView from "./views/SettingsView";
 import './App.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="details/:id" element={<DetailView/>}/>
           </Route>
           <Route path="cart" element={<CartView/>}/>
+          <Route path="settings" element={<SettingsView/>}/>
         </Routes>
       </BrowserRouter>
     </StoreProvider>

@@ -6,7 +6,7 @@ import "./GenreView.css";
 
 function GenreView() {
   const { 
-    selectedGenres, currentGenre
+    selectedGenres, firstName
   } = useStoreContext();
 
     const { id } = useParams();
@@ -53,6 +53,7 @@ function GenreView() {
 
   return (
     <div className="hero">
+      <h2>Welcome, {firstName}</h2>
       <h2>Movies</h2>
       <div className="genre-view-container">
         {movies.length > 0 ? (

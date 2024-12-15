@@ -12,7 +12,8 @@ function Header() {
     const navigate = useNavigate();
 
     function logout() {
-        navigate(`/login`);
+        setLoggedIn(false);
+        navigate(`/`);
     }
 
     return (
@@ -33,19 +34,21 @@ function Header() {
                     </button>
                 </div>
             ) : (
-                <div className="navigation">
+                <div className="navigation-logged-in">
                     <Link to={`/`} className="button">Home</Link>
+                    <Link to={`/movies`} className="button">Movies</Link>
                     <div className="dropdown">
                         <button className="drop-button">Profile</button>
                         <div className="drop-content">
-                            <a href="#">Settings</a>
+                            <Link to={`/settings`} className="button">Settings</Link>
                         </div>
                     </div>
                     <button className="Cart">
                         <Link to={`/cart`} className="button">Cart</Link>
                     </button>
-                    <button className="Log Out"
-                        onClick={() => { logout() }}>
+                    <button className="Log-Out"
+                        onClick={() => { logout() }}
+                        >
                         Log Out
                     </button>
                 </div>
