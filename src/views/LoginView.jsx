@@ -1,17 +1,17 @@
 import React from 'react';
-import { useState } from 'react';
+import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStoreContext } from "../context/GlobalState";
 import './LoginView.css';
 
 function LoginView() {
-    const { loggedIn, setLoggedIn } = useStoreContext();
-    const [password, setPassword] = useState('');
+    const { password, loggedIn, setLoggedIn } = useStoreContext();
+    const enteredPassword = useRef("");
     const navigate = useNavigate();
 
     function login(event) {
         event.preventDefault();
-        if (password === "ok") {
+        if (enteredPassword.current.value === password) {
             setLoggedIn(true);
             setTimeout(() => {
                 navigate('/movies');
@@ -32,7 +32,7 @@ function LoginView() {
                     <input type="email" id="email" name="email" required/>
 
                     <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" value={password} onChange={(event) => { setPassword(event.target.value) }} required/>
+                    <input type="password" id="password" name="password" ref={enteredPassword} required/>
 
                     <button type="submit" className="login-button">Login</button>
                 </form>

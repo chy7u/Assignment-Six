@@ -25,46 +25,21 @@ function RegisterView() {
   const confirmedPass = useRef("");
 
   const genres = [
-    {
-      genre: "Action",
-      id: 28,
-    },
-    {
-      genre: "Animation",
-      id: 16,
-    },
-    {
-      genre: "Crime",
-      id: 80,
-    },
-    {
-      genre: "Fantasy",
-      id: 14,
-    },
-    {
-      genre: "Horror",
-      id: 27,
-    },
-    {
-      genre: "Mystery",
-      id: 9648,
-    },
-    {
-      genre: "Music",
-      id: 10402,
-    },
-    {
-      genre: "War",
-      id: 10752,
-    },
-    {
-      genre: "Family",
-      id: 10751,
-    },
-    {
-      genre: "Sci-Fi",
-      id: 878,
-    },
+    { genre: "Action", id: 28 },
+    { genre:"Adventure", id: 12 },
+    { genre: "Animation", id: 16 },
+    { genre:"Comedy", id: 35 },
+    { genre: "Crime", id: 80 },
+    { genre: "Family", id: 10751 },
+    { genre: "Fantasy", id: 14 },
+    { genre:"History", id: 36 },
+    { genre: "Horror", id: 27 },
+    { genre: "Music", id: 10402 },
+    { genre: "Mystery", id: 9648 },
+    { genre: "Sci-Fi", id: 878 },
+    { genre: "Thriller", id: 53 },
+    { genre: "War", id: 10752 },
+    { genre: "Western", id: 37}
   ];
 
   const checkBoxesRef = useRef({});
@@ -77,7 +52,7 @@ function RegisterView() {
       .filter((genreId) => checkBoxesRef.current[genreId].checked)
       .map(Number); // convert string ids to number
 
-    if (selectedGenresIds.length < 2) {
+    if (selectedGenresIds.length < 10) {
       alert("You need at least 10 genres!");
       return;
     }
