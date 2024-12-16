@@ -5,19 +5,22 @@ import { useStoreContext } from "../context/GlobalState";
 import './LoginView.css';
 
 function LoginView() {
-    const { password, loggedIn, setLoggedIn } = useStoreContext();
+    const { password, email, loggedIn, setLoggedIn } = useStoreContext();
     const enteredPassword = useRef("");
+    const enteredEmail = useRef("");
     const navigate = useNavigate();
 
     function login(event) {
         event.preventDefault();
-        if (enteredPassword.current.value === password) {
+        if (enteredPassword.current.value === password
+            && enteredEmail.current.value === email
+        ) {
             setLoggedIn(true);
             setTimeout(() => {
                 navigate('/movies');
             }, 0);
         } else {
-            alert("Wrong password!");
+            alert("Wrong email or password!");
         }
     }
 
@@ -29,7 +32,7 @@ function LoginView() {
                 <h2>Login</h2>
                 <form onSubmit={(event) => {login(event)}}>
                     <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" required/>
+                    <input type="email" id="email" name="email" ref={enteredEmail} required/>
 
                     <label htmlFor="password">Password:</label>
                     <input type="password" id="password" name="password" ref={enteredPassword} required/>

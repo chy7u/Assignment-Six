@@ -8,7 +8,7 @@ function SettingsView() {
     firstName, setFirst,
     lastName, setLast,
     email, setCurrentGenre,
-    selectedGenres, setSelected
+    setSelected
   } = useStoreContext();
 
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ function SettingsView() {
       .filter((genreId) => checkboxesRef.current[genreId].checked)
       .map(Number);
     
-    if (selectedGenresIds.length >= 1 && selectedGenresIds.length < 3) {
+    if (selectedGenresIds.length < 10) {
       alert("You need to select at least 10 genres!");
     } else if (selectedGenresIds.length >= 3) {
 
@@ -65,7 +65,6 @@ function SettingsView() {
       setInfo();
       navigate(`/movies`);
     }
-    navigate(`/movies`);
   }
 
   function setInfo() {
